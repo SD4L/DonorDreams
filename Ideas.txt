@@ -1,0 +1,10 @@
+=======
+ Ideas
+=======
+
+
+Idea Format
+<ideaName> - <whos Idea> - <what does it do?>
+ArmorBlock - Ryans - Decide in confif what you can block
+
+

@@ -1,0 +1,91 @@
+name: Donor Dreams
+main: com.schautdollar.DonorDreams.DonorDreams
+author: SchautDollar AKA. Devils_Cool 
+version: 1.0
+description: >
+             Donors dreams will come true with the array of commands and things they can now do!
+commands:
+  donordreams:
+    description: Default DonorDreams management command.
+    usage: /<command>
+    aliases: [dd]
+  hat:
+    description: 
+    usage: /<command>
+  god:
+    description: 
+    usage: /<command> 
+  heal:
+    description: 
+    usage: /<command> [playerName]
+  feed:
+    description: 
+    usage: /<command> [playerName]
+  revive:
+    description: 
+    usage: /<command> [playerName]
+  firework:
+    description: 
+    usage: /<command>
+    aliases: [fw]
+  fireworkride:
+    description: 
+    usage: /<command> 
+    aliases: [fwr]
+  workbench:
+    description: 
+    usage: /<command>
+    aliases: [wb]
+  enchantingtable:
+    description: 
+    usage: /<command>
+    aliases: [et]
+  clearinv:
+    description:
+    usage: /<command>
+    aliases: [ci]    
+  clearChat:
+    description: 
+    usage: /<command>
+    aliases: [cc]
+  hoveringitem:
+    description: 
+    usage: /<command>
+    aliases: [hi]
+  sudo:
+    description: 
+    usage: /<command> [playerName]
+  donorchat:
+    description: 
+    usage: /<command> [args] [args] [args]
+    aliases: [ddc]
+  fly:
+    description: 
+    usage: /<command>
+  fakearmor:
+    description: 
+    usage: /<command>
+    aliases: [fa]
+  enchant:
+    description:
+    usage: /<command> 
+  placeHolder:
+    description: 
+    usage: /<command>
+  placeHolder:
+    description: 
+    usage: /<command> 
+  placeHolder:
+    description: 
+    usage: /<command>
+  placeHolder:
+    description: 
+    usage: /<command>
+  placeHolder:
+    description: 
+    usage: /<command>
+  placeHolder:
+    description: 
+    usage: /<command>
+    
+    

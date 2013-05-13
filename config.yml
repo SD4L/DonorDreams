@@ -1,0 +1,34 @@
+#
+# Default Config
+#   
+#
+DonorDreams:
+    Commands:
+        donorchat:
+            Enabled: true
+        hat:
+            Enabled: true
+        god:
+            Enabled: true
+        heal:
+            Enabled: true
+        feed:
+            Enabled: true
+        revive:
+            Enabled: true
+        firework:
+            Enabled: true
+        fireworkride:
+            Enabled: true
+        workbench:
+            Enabled: true
+        enchantingtable:
+            Enabled: true
+        clearinv:
+            Enabled: true
+        clearchat:
+            Enabled: true
+        hoveringitem:
+            Enabled: true
+        sudo:
+            Enabled: true

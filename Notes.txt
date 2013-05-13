@@ -1,0 +1,13 @@
+Notes as of 3/7/2013 ~ 11:45 by Ryan
+-Features will implement appropriate listeners as needed
+-Also, add you name to the authors list of a class if you helped out on it.
+Example using UserSettings
+
+Let's say we need to know if the player has god mode.
+we would check with...
+if((Boolean)DonorDreams.userSettings.getUserSetting("Player name", "isGod"));
+
+If we needed to store or change that value, we would use...
+DonorDreams.userSettings.setUserSetting("Player name","isGod", false);
+our values get stored as objects, so remember to typecast them when you want them back.
+
