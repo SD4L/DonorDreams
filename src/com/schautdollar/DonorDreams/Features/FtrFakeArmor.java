@@ -1,10 +1,10 @@
 package com.schautdollar.DonorDreams.Features;
 
-import net.minecraft.server.v1_4_R1.Packet5EntityEquipment;
+import net.minecraft.server.v1_5_R3.Packet5EntityEquipment;
 
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_4_R1.entity.CraftPlayer;
-import org.bukkit.craftbukkit.v1_4_R1.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_5_R3.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_5_R3.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
