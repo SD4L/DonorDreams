@@ -1,9 +1,6 @@
 package com.schautdollar.DonorDreams.Features;
 
-import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.List;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -65,6 +62,7 @@ public class FtrTombstone implements IFeature, Listener {
 		}
 	}
 	
+	@SuppressWarnings("rawtypes")
 	@EventHandler
 	public void onChestInteract(PlayerInteractEvent event) {
 		Player player = event.getPlayer();
