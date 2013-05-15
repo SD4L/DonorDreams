@@ -1,15 +1,8 @@
 package com.schautdollar.DonorDreams.Features;
 
-import java.util.HashMap;
-
-import org.bukkit.entity.Item;
-import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ItemDespawnEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
-import org.bukkit.inventory.ItemStack;
-
-import com.schautdollar.DonorDreams.DonorDreams;
 
 /**
  * @author molenzwiebel
