@@ -53,6 +53,7 @@ public class FtrDoubleJump implements IFeature, Listener {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	@EventHandler
 	public void setFlyOnJump(PlayerToggleFlightEvent event) {
 		Player player = event.getPlayer();

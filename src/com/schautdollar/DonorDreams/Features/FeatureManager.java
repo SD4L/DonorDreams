@@ -5,10 +5,10 @@ import java.util.Hashtable;
 import org.bukkit.plugin.PluginManager;
 
 import com.schautdollar.DonorDreams.DonorDreams;
-import com.schautdollar.DonorDreams.Commands.ICommand;
 
 public class FeatureManager {
 
+	@SuppressWarnings("unused")
 	private final DonorDreams PLUGIN;
 	private Hashtable<String, IFeature> features;
 
