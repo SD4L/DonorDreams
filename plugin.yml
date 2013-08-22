@@ -68,24 +68,6 @@ commands:
     aliases: [fa]
   enchant:
     description:
-    usage: /<command> 
-  placeHolder:
-    description: 
-    usage: /<command>
-  placeHolder:
-    description: 
-    usage: /<command> 
-  placeHolder:
-    description: 
-    usage: /<command>
-  placeHolder:
-    description: 
-    usage: /<command>
-  placeHolder:
-    description: 
-    usage: /<command>
-  placeHolder:
-    description: 
     usage: /<command>
     
     

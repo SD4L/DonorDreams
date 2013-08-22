@@ -23,7 +23,7 @@ public class DonorDreams extends JavaPlugin {
 	/**
 	 * Prefix for messages being logged here.
 	 */
-	public static final String PREFIX = "[DD] ";
+	public static final String PREFIX = "[DD]";
 	
 	/**
 	 * The logger for DonorDreams. Private forces logMessage() usage.
@@ -56,7 +56,7 @@ public class DonorDreams extends JavaPlugin {
 	 * @param msg Message to be displayed for log.
 	 */
 	public static void logMessage(String msg) {
-		log.info(PREFIX + msg);
+		log.info(PREFIX + " " + msg);
 	}
 	
 	final String SETTING_IS_IN_CHAT = "isInChat";

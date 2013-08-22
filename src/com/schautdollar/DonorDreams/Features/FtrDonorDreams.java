@@ -20,7 +20,6 @@ public class FtrDonorDreams implements IFeature, Listener {
 	public String getPermissionNode() {
 		return this.PERMISSION_NODE;
 	}
-	@SuppressWarnings("unused")
 	@EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();

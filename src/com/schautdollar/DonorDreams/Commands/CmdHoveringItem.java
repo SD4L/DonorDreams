@@ -1,5 +1,7 @@
 package com.schautdollar.DonorDreams.Commands;
 
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Item;
@@ -26,7 +28,6 @@ public class CmdHoveringItem implements ICommand{
 		return this.PERMISSION_NODE;
 	}
 
-	@SuppressWarnings("unused")
 	public boolean runCommand(CommandSender sender, Command cmd, String lbl, String[] args) {
 		Player player = (Player) sender;
 		

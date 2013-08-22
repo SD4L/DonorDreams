@@ -1,5 +1,7 @@
 package com.schautdollar.DonorDreams.Commands;
 
+import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -25,17 +27,26 @@ public class CmdHat implements ICommand {
 	}
 
 	public boolean runCommand(CommandSender sender, Command cmd, String lbl, String[] args) {
-		Player player = (Player) sender;
 		
+		0
 		if(cmd.getName().equalsIgnoreCase(this.COMMAND)) {
 			if(sender instanceof Player) {
+				Player player = (Player) sender;
 				if(DonorDreams.permManager.playerHasPerm(player, this.PERMISSION_NODE)) {
 					ItemStack itemInHand = player.getItemInHand();
 					player.getInventory().setItemInHand(player.getInventory().getHelmet());
 					player.getInventory().setHelmet(itemInHand);
+					return true;
 				}
+				else
+					player.sendMessage(DonorDreams.PREFIX + "You do not have permissions to use " + this.getCommand() + ".");
+					return true;
 			}
+			else
+				DonorDreams.logMessage(ChatColor.RED + "Silly console. The command \"" + this.getCommand() + "\" can only be used by a player.");
+				return true;
 		}
-		return false;
+		else
+			return false;
 	}
 }
