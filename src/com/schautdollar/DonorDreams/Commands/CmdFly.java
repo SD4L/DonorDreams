@@ -36,18 +36,28 @@ public class CmdFly implements ICommand {
 					if(isFlying != null && isFlying instanceof Boolean && (Boolean)isFlying) {
 						player.setAllowFlight(false);
 						player.setFlying(false);
+						DonorDreams.userSettings.setSetting(player.getName(), "isFlying", false);
 						player.sendMessage(ChatColor.GRAY + "Flying Disabled!");
-
-					} else {
+						return true;
+					} 
+					else {
 						player.setAllowFlight(true);
+						DonorDreams.userSettings.setSetting(player.getName(), "isFlying", true);
 						player.sendMessage(ChatColor.GRAY + "Flying Enabled!");
+						return true;
 					}
-				} else {
-					player.sendMessage(ChatColor.RED + "You don't have the permission to fly!");
+				} 
+				else {
+					player.sendMessage(ChatColor.RED + "You don't have permissions to fly!");
+					return true;
 				}
 			}
+			else{
+				DonorDreams.logMessage(ChatColor.RED + "Silly console. The command \"" + this.getCommand() + "\" can only be used by a player.");
+				return true;
+			}
 		}
-		
-		return false;
+		else
+			return false;
 	}
 }

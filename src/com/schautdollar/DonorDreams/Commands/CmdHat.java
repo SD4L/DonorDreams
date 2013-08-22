@@ -27,8 +27,7 @@ public class CmdHat implements ICommand {
 	}
 
 	public boolean runCommand(CommandSender sender, Command cmd, String lbl, String[] args) {
-		
-		0
+			
 		if(cmd.getName().equalsIgnoreCase(this.COMMAND)) {
 			if(sender instanceof Player) {
 				Player player = (Player) sender;
@@ -36,15 +35,18 @@ public class CmdHat implements ICommand {
 					ItemStack itemInHand = player.getItemInHand();
 					player.getInventory().setItemInHand(player.getInventory().getHelmet());
 					player.getInventory().setHelmet(itemInHand);
+					player.sendMessage(ChatColor.GRAY + "Nice Hat!");
 					return true;
 				}
-				else
+				else{
 					player.sendMessage(DonorDreams.PREFIX + "You do not have permissions to use " + this.getCommand() + ".");
 					return true;
+				}
 			}
-			else
+			else{
 				DonorDreams.logMessage(ChatColor.RED + "Silly console. The command \"" + this.getCommand() + "\" can only be used by a player.");
 				return true;
+			}
 		}
 		else
 			return false;
