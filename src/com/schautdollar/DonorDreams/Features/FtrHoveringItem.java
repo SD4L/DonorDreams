@@ -1,15 +1,8 @@
 package com.schautdollar.DonorDreams.Features;
 
-import java.util.HashMap;
-
-import org.bukkit.entity.Item;
-import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ItemDespawnEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
-import org.bukkit.inventory.ItemStack;
-
-import com.schautdollar.DonorDreams.DonorDreams;
 
 /**
  * @author molenzwiebel
@@ -19,19 +12,19 @@ import com.schautdollar.DonorDreams.DonorDreams;
 public class FtrHoveringItem implements IFeature, Listener {
 	//private HashMap<String, Integer> hoveringItems = new HashMap<String, Integer>();
 	//private DonorDreams plugin;
-	
+
 	final String SETTING_HI = "hoveringItem";
 	final String FEATURE_NAME = "hoveringitem";
 	final String PERMISSION_NODE = "donordreams.hi";
-	
+
 	public String getFeatureName() {
 		return this.FEATURE_NAME;
 	}
-	
+
 	public String getPermissionNode() {
 		return this.PERMISSION_NODE;
 	}
-	
+
 	/*//public FtrHoveringItem(DonorDreams instance) {
 		//this.plugin = instance;
 	//}

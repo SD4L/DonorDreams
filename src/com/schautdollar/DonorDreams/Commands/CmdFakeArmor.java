@@ -12,13 +12,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import com.schautdollar.DonorDreams.DonorDreams;
-import com.schautdollar.DonorDreams.ConfigManager;
 /*
  * Author: Burnett1
- * 
+ *
  */
 public class CmdFakeArmor implements ICommand {
-	
+
 
 	final String COMMAND = "fakearmor";
 	final String PERMISSION_NODE = "donordreams.fakearmor";
@@ -30,10 +29,10 @@ public class CmdFakeArmor implements ICommand {
 
 
 	public String getCommand() {
-		
+
 		return this.COMMAND;
 	}
-	
+
 	public String getPermissionNode(){
 		return this.PERMISSION_NODE;
 	}
@@ -41,7 +40,7 @@ public class CmdFakeArmor implements ICommand {
 	public boolean runCommand(CommandSender sender, Command cmd, String lbl,
 			String[] args) {
 		Player player = (Player) sender;
-		
+
 		if (cmd.getName().equalsIgnoreCase(COMMAND) && DonorDreams.permManager.playerHasPerm(player, PERMISSION_NODE)){
 			if (args.length > 1 || args.length < 1) {
 				DonorDreams.userSettings.setSetting(player.getName(), SETTING_ISUSING_FAKE, false);
@@ -75,9 +74,9 @@ public class CmdFakeArmor implements ICommand {
 		}
 		return false;
 	}
-	
+
 	public static String IStoString(ItemStack st) {
-		boolean enchanted = false; 
+		boolean enchanted = false;
 		for (Enchantment c : Enchantment.values()) {
 			if (st.containsEnchantment(c)) enchanted = true;
 		}

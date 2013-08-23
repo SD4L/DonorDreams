@@ -1,9 +1,6 @@
 package com.schautdollar.DonorDreams.Features;
 
-import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.List;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -19,7 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import com.schautdollar.DonorDreams.DonorDreams;
 
 /**
- * 
+ *
  * @author Shinxs
  *
  */
@@ -30,15 +27,15 @@ public class FtrTombstone implements IFeature, Listener {
 	final String SETTING_HAS_TOMBSTONE = "hasTombstone";//FOR USER SETTINGS | Either true or false
 	final String FEATURE_NAME = "tombchest";
 	final String PERMISSION_NODE = "donordreams.tombstone";
-	
+
 	public FtrTombstone(){
 		DonorDreams.featureSettings.setSetting(this.FEATURE_NAME, this.SETTING_HAS_TOMBSTONE, new Hashtable<String, Location>());
 	}
-	
+
 	public String getFeatureName() {
 		return this.FEATURE_NAME;
 	}
-	
+
 	@EventHandler
 	public void onEntityDamage(PlayerDeathEvent event) {
 		Player player = event.getEntity();
@@ -47,24 +44,24 @@ public class FtrTombstone implements IFeature, Listener {
 		Location pl = player.getLocation();
 		World world = player.getWorld();
 		Location chestLocation = new Location(world, pl.getX(), pl.getY(), pl.getZ());
-		
+
 		chestLocation.getBlock().setType(Material.CHEST);
 		Chest chest = (Chest) chestLocation.getBlock().getState();
-		
+
 		ItemStack[] playerInv = player.getInventory().getContents();
 		ItemStack[] chestContents = new ItemStack[playerInv.length];
-		
+
 		for(int i = 0; i < player.getInventory().getSize(); i++) {
 			chestContents[i] = playerInv[i];
 		}
-		
+
 		for(int i = 0; i < chest.getInventory().getSize(); i++) {
 			if(chestContents[i] != null) {
 				chest.getInventory().addItem(chestContents);
 			}
 		}
 	}
-	
+
 	@EventHandler
 	public void onChestInteract(PlayerInteractEvent event) {
 		Player player = event.getPlayer();
@@ -75,8 +72,8 @@ public class FtrTombstone implements IFeature, Listener {
 			Hashtable tombs = (Hashtable)DonorDreams.featureSettings.getSetting(this.FEATURE_NAME, this.SETTING_TOMBSTONES);
 			if(tombs.containsKey(player.getName())){
 				if((Location)tombs.get(player.getName()) == block.getLocation()){
-					
-					
+
+
 					DonorDreams.userSettings.removeSetting(player.getName(), this.SETTING_HAS_TOMBSTONE);
 				return;
 				}
@@ -85,6 +82,6 @@ public class FtrTombstone implements IFeature, Listener {
 				DonorDreams.userSettings.removeSetting(player.getName(), this.SETTING_HAS_TOMBSTONE);
 		}
 		event.setCancelled(true);
-		
+
 	}
 }

@@ -1,7 +1,6 @@
 package com.schautdollar.DonorDreams.Commands;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Color;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -17,7 +16,7 @@ public class CmdHat implements ICommand {
 
 	final String COMMAND = "hat";
 	final String PERMISSION_NODE = "donordreams.hat";
-	
+
 	public String getCommand() {
 		return this.COMMAND;
 	}
@@ -27,7 +26,7 @@ public class CmdHat implements ICommand {
 	}
 
 	public boolean runCommand(CommandSender sender, Command cmd, String lbl, String[] args) {
-			
+
 		if(cmd.getName().equalsIgnoreCase(this.COMMAND)) {
 			if(sender instanceof Player) {
 				Player player = (Player) sender;

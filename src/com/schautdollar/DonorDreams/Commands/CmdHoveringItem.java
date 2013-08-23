@@ -1,7 +1,5 @@
 package com.schautdollar.DonorDreams.Commands;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Item;
@@ -15,11 +13,11 @@ import com.schautdollar.DonorDreams.DonorDreams;
  *	Sets whatever is in the hand of player as the helmet for player while moving helmet to hand.
  */
 public class CmdHoveringItem implements ICommand{
-	
+
 	final String SETTING_HI = "hoveringitem";
 	final String COMMAND = "hoveringitem";
 	final String PERMISSION_NODE = "donordreams.hi";
-	
+
 	public String getCommand() {
 		return this.COMMAND;
 	}
@@ -30,11 +28,11 @@ public class CmdHoveringItem implements ICommand{
 
 	public boolean runCommand(CommandSender sender, Command cmd, String lbl, String[] args) {
 		Player player = (Player) sender;
-		
+
 		if(cmd.getName().equalsIgnoreCase(this.COMMAND)) {
 			if(sender instanceof Player) {
 				if(DonorDreams.permManager.playerHasPerm(player, this.PERMISSION_NODE)) {
-					//I need some way to get the feature class! How would i do that? 
+					//I need some way to get the feature class! How would i do that?
 					//REPLY - use user settings
 					if (DonorDreams.userSettings.doesSettingExists(player.getName(), this.SETTING_HI)){
 						int currentItem = (Integer)DonorDreams.userSettings.getSetting(player.getName(), this.SETTING_HI);

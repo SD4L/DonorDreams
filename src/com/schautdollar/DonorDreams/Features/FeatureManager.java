@@ -5,7 +5,6 @@ import java.util.Hashtable;
 import org.bukkit.plugin.PluginManager;
 
 import com.schautdollar.DonorDreams.DonorDreams;
-import com.schautdollar.DonorDreams.Commands.ICommand;
 
 public class FeatureManager {
 
@@ -16,11 +15,11 @@ public class FeatureManager {
 		this.PLUGIN = plugin;
 		this.features = new Hashtable<String, IFeature>();
 		PluginManager pm = plugin.getServer().getPluginManager();
-		
+
 		FtrDonorDreams ftrDD = new FtrDonorDreams();
 		pm.registerEvents(ftrDD, plugin);
 		this.addFeature(ftrDD);
-	
+
 		if (DonorDreams.configManager.isCommandEnabled("god")){
 			FtrGod ftrGod = new FtrGod();
 			pm.registerEvents(ftrGod, plugin);
@@ -61,7 +60,7 @@ public class FeatureManager {
 			pm.registerEvents(ftrTombstone, plugin);
 			this.addFeature(ftrTombstone);
 		}
-	
+
 	}
 
 	/**
