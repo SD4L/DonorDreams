@@ -25,9 +25,8 @@ public class CmdClearChat implements ICommand {
 			if(sender instanceof Player) {
 				Player player = (Player) sender;
 				if(DonorDreams.permManager.playerHasPerm(player, this.PERMISSION_NODE)) {
-				
-					for(int i = 0; i < 50; i++) 
-						player.sendMessage("      ");
+					for(int i = 0; i < 100; i++)// Tested up to 300, Chat limit is 100 lines.
+						player.sendMessage(" ");	
 					return true;
 				}
 				else{

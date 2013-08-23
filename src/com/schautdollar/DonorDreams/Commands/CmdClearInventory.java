@@ -33,7 +33,7 @@ public class CmdClearInventory implements ICommand {
 
 	@Override
 	public boolean runCommand(CommandSender sender, Command cmd, String lbl, String[] args) {
-		if(cmd.getName().equalsIgnoreCase(COMMAND)) {
+		if(cmd.getName().equalsIgnoreCase(this.COMMAND)) {
 			if(sender instanceof Player) {
 				Player player = (Player) sender;
 				if(DonorDreams.permManager.playerHasPerm(player, this.PERMISSION_NODE)){

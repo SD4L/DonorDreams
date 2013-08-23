@@ -44,7 +44,7 @@ commands:
     description:
     usage: /<command>
     aliases: [ci]    
-  clearChat:
+  clearchat:
     description: 
     usage: /<command>
     aliases: [cc]
