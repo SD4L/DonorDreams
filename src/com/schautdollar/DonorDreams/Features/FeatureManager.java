@@ -20,7 +20,7 @@ public class FeatureManager {
 		pm.registerEvents(ftrDD, plugin);
 		this.addFeature(ftrDD);
 
-		if (DonorDreams.configManager.isCommandEnabled("god")){
+		if (DonorDreams.configManager.isFeatureEnabled("god")){
 			FtrGod ftrGod = new FtrGod();
 			pm.registerEvents(ftrGod, plugin);
 			this.addFeature(ftrGod);

@@ -2,6 +2,7 @@ package com.schautdollar.DonorDreams.Commands;
 
 import java.util.Hashtable;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -24,46 +25,23 @@ public class CommandManager implements CommandExecutor {
 		this.commands = new Hashtable<String, ICommand>();
 		//Create required commands and add them to the hashtable
 		this.addCommand(new CmdDonorDreams());
-		//Check optional commands and add them to the hashtable
-		if(DonorDreams.configManager.isCommandEnabled("hat"))
-			this.addCommand(new CmdHat());
-		if(DonorDreams.configManager.isCommandEnabled("god"))
-			this.addCommand(new CmdGod());
-		if(DonorDreams.configManager.isCommandEnabled("hoveringitem"))
-			this.addCommand(new CmdHoveringItem());
-		if(DonorDreams.configManager.isCommandEnabled("clearchat"))
-			this.addCommand(new CmdClearChat());
-		if(DonorDreams.configManager.isCommandEnabled("clearinv"))
-			this.addCommand(new CmdClearInventory());
-		if(DonorDreams.configManager.isCommandEnabled("donorchat"))
-			this.addCommand(new CmdDonorChat());
-		if(DonorDreams.configManager.isCommandEnabled("donordreams"))
-			this.addCommand(new CmdDonorDreams());
-		if(DonorDreams.configManager.isCommandEnabled("enchant"))
-			this.addCommand(new CmdEnchant());
-		if(DonorDreams.configManager.isCommandEnabled("enchantingtable"))
-			this.addCommand(new CmdEnchantingTable());
-		if(DonorDreams.configManager.isCommandEnabled("fakearmor"))
-			this.addCommand(new CmdFakeArmor());
-		if(DonorDreams.configManager.isCommandEnabled("feed"))
-			this.addCommand(new CmdFeed());
-		if(DonorDreams.configManager.isCommandEnabled("firework"))
-			this.addCommand(new CmdFireWork());
-		if(DonorDreams.configManager.isCommandEnabled("fireworkride"))
-			this.addCommand(new CmdFireWorkRide());
-		if(DonorDreams.configManager.isCommandEnabled("fly"))
-			this.addCommand(new CmdFly());
-		if(DonorDreams.configManager.isCommandEnabled("heal"))
-			this.addCommand(new CmdHeal());
-		if(DonorDreams.configManager.isCommandEnabled("revive"))
-			this.addCommand(new CmdRevive());
-		if(DonorDreams.configManager.isCommandEnabled("sudo"))
-			this.addCommand(new CmdSudo());
-		if(DonorDreams.configManager.isCommandEnabled("workbench"))
-			this.addCommand(new CmdWorkBench());
-		//if(DonorDreams.configManager.isCommandEnabled("doublejump"))
-			//this.addCommand(new CmdWorkBench());
-		//etc
+		this.addCommand(new CmdHat()); //Working
+		this.addCommand(new CmdGod()); 
+		this.addCommand(new CmdHoveringItem());
+		this.addCommand(new CmdClearChat()); //Working
+		this.addCommand(new CmdClearInventory()); //Working
+		this.addCommand(new CmdDonorChat());
+		this.addCommand(new CmdEnchant());
+		this.addCommand(new CmdEnchantingTable()); 
+		this.addCommand(new CmdFakeArmor());
+		this.addCommand(new CmdFeed()); //Working
+		this.addCommand(new CmdFireWork());
+		this.addCommand(new CmdFireWorkRide());
+		this.addCommand(new CmdFly()); //Working
+		this.addCommand(new CmdHeal()); //Working
+		this.addCommand(new CmdRevive()); //Working
+		this.addCommand(new CmdSudo());
+		this.addCommand(new CmdWorkBench());
 		
 	}
 	
@@ -80,6 +58,7 @@ public class CommandManager implements CommandExecutor {
 			//DonorDreams.logMessage("Command About To Be Ran: " + cmd.getName());
 			return this.commands.get(cmd.getName()).runCommand(sender, cmd, lbl, args);
 		}
+		DonorDreams.logMessage(ChatColor.RED + "The command \"" + cmd + "\" does not seem to exist here. Contact a developer!");
 		return false;
 	} 
 	

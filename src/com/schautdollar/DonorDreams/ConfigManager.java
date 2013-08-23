@@ -22,15 +22,6 @@ public class ConfigManager extends JavaPlugin {
 	}
 	
 	/**
-	 * @param cmd The command to check.
-	 * @return True or False depending on if command is enabled.
-	 */
-	public boolean isCommandEnabled(String cmd){
-		//DonorDreams.logMessage("Is command<"+cmd+"> enabled:" + config.getBoolean(this.BASE_NODE + ".Commands." + cmd.toLowerCase() + ".Enabled"));
-		return config.getBoolean(this.BASE_NODE + ".Commands." + cmd.toLowerCase() + ".Enabled");
-	}
-	
-	/**
 	 * @param feature The feature to check.
 	 * @return True or False depending on if feature is enabled.
 	 */
