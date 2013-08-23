@@ -30,15 +30,21 @@ public class CmdHat implements ICommand {
 		if(cmd.getName().equalsIgnoreCase(this.COMMAND)) {
 			if(sender instanceof Player) {
 				Player player = (Player) sender;
-				if(DonorDreams.permManager.playerHasPerm(player, this.PERMISSION_NODE)) {
+				if(DonorDreams.permManager.playerHasPerm(player, this.PERMISSION_NODE)) {					
 					ItemStack itemInHand = player.getItemInHand();
-					player.getInventory().setItemInHand(player.getInventory().getHelmet());
-					player.getInventory().setHelmet(itemInHand);
-					player.sendMessage(ChatColor.GRAY + "Nice Hat!");
-					return true;
+					if(itemInHand.getAmount() > 0 || player.getInventory().getHelmet() != null){
+						player.getInventory().setItemInHand(player.getInventory().getHelmet());
+						player.getInventory().setHelmet(itemInHand);
+						player.sendMessage(ChatColor.GRAY + "Nice Hat!");
+						return true;
+					}
+					else{
+						player.sendMessage(ChatColor.RED + "You need to be holding something or wearing a hat!");
+						return true;					
+					}
 				}
 				else{
-					player.sendMessage(DonorDreams.PREFIX + "You do not have permissions to use " + this.getCommand() + ".");
+					player.sendMessage(ChatColor.RED + "You do not have permissions to use " + this.getCommand() + ".");
 					return true;
 				}
 			}
