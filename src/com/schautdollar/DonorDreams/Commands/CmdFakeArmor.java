@@ -1,12 +1,12 @@
 package com.schautdollar.DonorDreams.Commands;
 
-import net.minecraft.server.v1_4_R1.Packet5EntityEquipment;
+import net.minecraft.server.v1_6_R2.Packet5EntityEquipment;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.v1_4_R1.inventory.CraftItemStack;
-import org.bukkit.craftbukkit.v1_4_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_6_R2.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_6_R2.entity.CraftPlayer;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
