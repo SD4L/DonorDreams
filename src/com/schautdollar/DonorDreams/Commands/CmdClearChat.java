@@ -1,5 +1,6 @@
 package com.schautdollar.DonorDreams.Commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -27,10 +28,21 @@ public class CmdClearChat implements ICommand {
 				
 					for(int i = 0; i < 50; i++) 
 						player.sendMessage("      ");
-					
+					return true;
+				}
+				else{
+					player.sendMessage(ChatColor.RED + "You do not have permission to have your chat automatically cleared.");
+					return true;	
 				}
 			}
+			else{
+				//implement TARGETED PLAYER
+				DonorDreams.logMessage(ChatColor.RED + "Silly console. The command \"" + this.getCommand() + "\" can only be used by a player.");
+				return true;
+			}				
 		}
-		return false;
+		else{
+			return false;
+		}		
 	}
 }

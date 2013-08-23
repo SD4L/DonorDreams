@@ -7,28 +7,23 @@ import org.bukkit.entity.Player;
 
 import com.schautdollar.DonorDreams.DonorDreams;
 
-/*
- * Author: Burnett1
- * 
+/**
+ * @author Ryan
+ *
  */
+public class CmdFeed implements ICommand {
 
-public class CmdHeal implements ICommand{
+	final String COMMAND = "feed";
+	final String PERMISSION_NODE = "donordreams.feed";
+	final String PERMISSION_NODE_OTHERS = "donordreams.feed.others";
 	
-	
-	final String COMMAND = "heal";
-	final String PERMISSION_NODE = "donordreams.heal";
-	final String PERMISSION_NODE_OTHERS = "donordreams.heal.others";
-
 	@Override
 	public String getCommand() {
 		return this.COMMAND;
 	}
-
-	public String getPermissionNode() {
-		
+	public String getPermissionNode(){
 		return this.PERMISSION_NODE;
 	}
-	
 	public String getPermissionNodeOthers(){
 		return this.PERMISSION_NODE_OTHERS;
 	}
@@ -40,24 +35,22 @@ public class CmdHeal implements ICommand{
 				Player player = (Player) sender;
 				if(DonorDreams.permManager.playerHasPerm(player, this.PERMISSION_NODE)){
 					if(args.length == 0){
-						player.setHealth(20.0);
-						player.setFireTicks(0);
-						player.sendMessage(ChatColor.GRAY + "Healed!");
+						player.setFoodLevel(20);
+						player.sendMessage(ChatColor.GRAY + "Fed!");
 						return true;
 					
 					}else if(args.length == 1 && DonorDreams.permManager.playerHasPerm(player, PERMISSION_NODE_OTHERS)){
 						Player targetPlayer = player.getServer().getPlayer(args[0]);
-						targetPlayer.setHealth(20.0);
-						targetPlayer.setFireTicks(0);
-						targetPlayer.sendMessage(ChatColor.GRAY + "You've been healed!");
+						targetPlayer.setFoodLevel(20);
+						targetPlayer.sendMessage(ChatColor.GRAY + "You've been fed!");
 						return true;
 					}else{
-						player.sendMessage(ChatColor.RED + "You do not have permission to heal others.");
+						player.sendMessage(ChatColor.RED + "You do not have permission to feed others.");
 						return true;
 					}
 				}
 				else{
-					player.sendMessage(ChatColor.RED + "You do not have permission to heal yourself.");
+					player.sendMessage(ChatColor.RED + "You do not have permission to feed yourself.");
 					return true;
 				}
 			}
@@ -70,4 +63,5 @@ public class CmdHeal implements ICommand{
 		else
 			return false;
 	}
+
 }

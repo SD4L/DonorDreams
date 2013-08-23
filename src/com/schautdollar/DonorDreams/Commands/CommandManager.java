@@ -45,6 +45,8 @@ public class CommandManager implements CommandExecutor {
 			this.addCommand(new CmdEnchantingTable());
 		if(DonorDreams.configManager.isCommandEnabled("fakearmor"))
 			this.addCommand(new CmdFakeArmor());
+		if(DonorDreams.configManager.isCommandEnabled("feed"))
+			this.addCommand(new CmdFeed());
 		if(DonorDreams.configManager.isCommandEnabled("firework"))
 			this.addCommand(new CmdFireWork());
 		if(DonorDreams.configManager.isCommandEnabled("fireworkride"))

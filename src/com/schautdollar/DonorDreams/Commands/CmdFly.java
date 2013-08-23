@@ -53,6 +53,7 @@ public class CmdFly implements ICommand {
 				}
 			}
 			else{
+				//implement TARGETED PLAYER
 				DonorDreams.logMessage(ChatColor.RED + "Silly console. The command \"" + this.getCommand() + "\" can only be used by a player.");
 				return true;
 			}

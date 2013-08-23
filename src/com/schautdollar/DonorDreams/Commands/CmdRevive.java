@@ -26,23 +26,43 @@ public class CmdRevive implements ICommand {
 	}
 
 	@Override
-	public boolean runCommand(CommandSender sender, Command cmd, String lbl, String[] args) {
-		
-		Player player = (Player) sender;
-		
-		if(cmd.getName().equalsIgnoreCase(this.COMMAND) && DonorDreams.permManager.playerHasPerm(player, this.PERMISSION_NODE)){
-			
-			player.getInventory().clear();
-			
-			
-		}else{
-			player.sendMessage(ChatColor.RED + "You do not have permission to do this.");
-			return true;
+	public boolean runCommand(CommandSender sender, Command cmd, String lbl,String[] args) {
+		if(cmd.getName().equalsIgnoreCase(COMMAND)) {
+			if(sender instanceof Player) {
+				Player player = (Player) sender;
+				if(DonorDreams.permManager.playerHasPerm(player, this.PERMISSION_NODE)){
+					if(args.length == 0){
+						player.setHealth(20.0);
+						player.setFireTicks(0);
+						player.setFoodLevel(20);
+						player.sendMessage(ChatColor.GRAY + "Revived!");
+						return true;
+					
+					}else if(args.length == 1 && DonorDreams.permManager.playerHasPerm(player, PERMISSION_NODE_OTHERS)){
+						Player targetPlayer = player.getServer().getPlayer(args[0]);
+						targetPlayer.setHealth(20.0);
+						targetPlayer.setFireTicks(0);
+						targetPlayer.setFoodLevel(20);
+						targetPlayer.sendMessage(ChatColor.GRAY + "You've been revived!");
+					
+						return true;
+					}else{
+						player.sendMessage(ChatColor.RED + "You do not have permission to revive others.");
+						return true;
+					}
+				}
+				else{
+					player.sendMessage(ChatColor.RED + "You do not have permission to revive yourself.");
+					return true;
+				}
+			}
+			else{
+				//implement TARGETED PLAYER
+				DonorDreams.logMessage(ChatColor.RED + "Silly console. The command \"" + this.getCommand() + "\" can only be used by a player.");
+				return true;
+			}
 		}
-		
-		
-		
-		
-		return false;
+		else
+			return false;
 	}
 }
