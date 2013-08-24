@@ -33,7 +33,7 @@ public class CmdFly implements ICommand {
 				Player player = (Player) sender;
 				if(DonorDreams.permManager.playerHasPerm(player, this.PERMISSION_NODE)) {
 					Object isFlying = DonorDreams.userSettings.getSetting(player.getName(), "isFlying");
-					if(isFlying != null && isFlying instanceof Boolean && (Boolean)isFlying) {
+					if(isFlying != null && isFlying instanceof Boolean && (Boolean)isFlying || player.getAllowFlight()) {
 						player.setAllowFlight(false);
 						player.setFlying(false);
 						DonorDreams.userSettings.setSetting(player.getName(), "isFlying", false);

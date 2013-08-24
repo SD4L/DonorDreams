@@ -41,7 +41,9 @@ public class CmdDonorDreams implements ICommand {
 				player.sendMessage("");
 				
 				// all the subcommands here. See plugin desc.
-				player.sendMessage(ChatColor.BLUE + "/dd" + " - " + "Show all of the commands");
+				//player.sendMessage(ChatColor.BLUE + "/dd" + " - " + "Show all of the commands");
+				player.sendMessage(ChatColor.BLUE + "Donor Dreams is still in developement. Premium players will be able to try most, if not all.");
+				player.sendMessage(ChatColor.BLUE + "For now, premium players can use \"/fly\",\"/feed\",\"/heal\",\"/revive\",\"/enchantingtable\",\"/workbench\".");
 			}
 			
 			else if(args[0].equalsIgnoreCase("admin")) {
@@ -58,7 +60,7 @@ public class CmdDonorDreams implements ICommand {
 			
 		}
 		
-		return false;
+		return true;
 	}
 	
 	public boolean equals(Object obj){

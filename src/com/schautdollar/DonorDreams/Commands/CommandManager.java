@@ -23,25 +23,26 @@ public class CommandManager implements CommandExecutor {
 	public CommandManager(final DonorDreams plugin){
 		this.PLUGIN = plugin;
 		this.commands = new Hashtable<String, ICommand>();
-		//Create required commands and add them to the hashtable
+		/*Create required commands and add them to the hashtable*/
 		this.addCommand(new CmdDonorDreams());
 		this.addCommand(new CmdHat()); //Working
-		this.addCommand(new CmdGod()); 
-		this.addCommand(new CmdHoveringItem());
+		//this.addCommand(new CmdGod()); 
+		//this.addCommand(new CmdHoveringItem());
 		this.addCommand(new CmdClearChat()); //Working
 		this.addCommand(new CmdClearInventory()); //Working
-		this.addCommand(new CmdDonorChat());
-		this.addCommand(new CmdEnchant());
-		this.addCommand(new CmdEnchantingTable()); 
-		this.addCommand(new CmdFakeArmor());
+		//this.addCommand(new CmdDonorChat());
+		//this.addCommand(new CmdEnchant());
+		this.addCommand(new CmdEnchantingTable()); //Working
+		//this.addCommand(new CmdFakeArmor());
 		this.addCommand(new CmdFeed()); //Working
-		this.addCommand(new CmdFireWork());
-		this.addCommand(new CmdFireWorkRide());
+		//this.addCommand(new CmdFireWork());
+		//this.addCommand(new CmdFireWorkRide());
 		this.addCommand(new CmdFly()); //Working
 		this.addCommand(new CmdHeal()); //Working
 		this.addCommand(new CmdRevive()); //Working
-		this.addCommand(new CmdSudo());
-		this.addCommand(new CmdWorkBench());
+		//this.addCommand(new CmdSudo());
+		this.addCommand(new CmdWorkBench()); //Working
+		this.addCommand(new CmdRepair()); //Working
 		
 	}
 	

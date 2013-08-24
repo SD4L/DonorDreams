@@ -94,12 +94,12 @@ public class DonorDreams extends JavaPlugin {
 	
 	public void onDisable() {
 		
-		for(Player p : Bukkit.getServer().getOnlinePlayers()){
+		/*for(Player p : Bukkit.getServer().getOnlinePlayers()){
 			DonorDreams.userSettings.setSetting(p.getName(),this.SETTING_CHAT_NAME, null);
 			DonorDreams.userSettings.setSetting(p.getName(),this.SETTING_HAS_INVITE, false);
 			DonorDreams.userSettings.setSetting(p.getName(),this.SETTING_IS_IN_CHAT, false);
 			DonorDreams.userSettings.setSetting(p.getName(),this.SETTING_IS_OWNER, null);
-		}
+		}*/
 		
 		DonorDreams.logMessage("Disabled");
 	}

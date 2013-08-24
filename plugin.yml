@@ -1,7 +1,9 @@
 name: Donor Dreams
 main: com.schautdollar.DonorDreams.DonorDreams
-author: SchautDollar AKA. Devils_Cool 
+authors: [SchautDollar AKA. Devils_Cool, Shinxs, Burnett1, Molenzwiebel]
+prefix: DD
 version: 1.0
+website: http://dev.bukkit.org/bukkit-plugins/donor-dreams/
 description: >
              Donors dreams will come true with the array of commands and things they can now do!
 commands:
@@ -12,18 +14,23 @@ commands:
   hat:
     description: 
     usage: /<command>
+    permission: donordreams.hat
   god:
     description: 
     usage: /<command> 
+    permission: donordreams.god
   heal:
     description: 
     usage: /<command> [playerName]
+    permission: donordreams.heal
   feed:
     description: 
     usage: /<command> [playerName]
+    permission: donordreams.feed
   revive:
     description: 
     usage: /<command> [playerName]
+    permission: donordreams.revive
   firework:
     description: 
     usage: /<command>
@@ -34,20 +41,24 @@ commands:
     aliases: [fwr]
   workbench:
     description: 
-    usage: /<command>
+    usage: /<command> [playerName]
     aliases: [wb]
+    permission: donordreams.workbench
   enchantingtable:
     description: 
-    usage: /<command>
+    usage: /<command> [playerName]
     aliases: [et]
-  clearinv:
+    permission: donordreams.enchantingtable
+  clearinventory:
     description:
-    usage: /<command>
-    aliases: [ci]    
+    usage: /<command> [playerName]
+    aliases: [ci]
+    permission: donordreams.clearinventory
   clearchat:
     description: 
     usage: /<command>
     aliases: [cc]
+    permission: donordreams.clearchat
   hoveringitem:
     description: 
     usage: /<command>
@@ -61,13 +72,29 @@ commands:
     aliases: [ddc]
   fly:
     description: 
-    usage: /<command>
+    usage: /<command> [playerName]
+    permission: donordreams.fly
   fakearmor:
     description: 
     usage: /<command>
     aliases: [fa]
   enchant:
     description:
+    usage: /<command> [enchantment]
+  repair:
+    description:
     usage: /<command>
-    
-    
+permissions:
+  donordreams.*:
+    description: Gives access to all Donor Dream Commands
+    children:
+      donordreams.fly:true
+      donordreams.feed:true
+      donordreams.heal:true
+      donordreams.revive:true
+      donordreams.hat:true
+      donordreams.clearchat:true
+      donordreams.clearinventory:true
+      donordreams.workbench:true
+      donordreams.enchantingtable:true
+      donordreams.repair:true

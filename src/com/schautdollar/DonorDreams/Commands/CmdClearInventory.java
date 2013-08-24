@@ -16,8 +16,8 @@ import com.schautdollar.DonorDreams.DonorDreams;
 public class CmdClearInventory implements ICommand {
 
 	
-	final String COMMAND = "clearinv";
-	final String PERMISSION_NODE = "donordreams.clearinv";
+	final String COMMAND = "clearinventory";
+	final String PERMISSION_NODE = "donordreams.clearinventory";
 	final String PERMISSION_NODE_OTHERS = "donordreams.clearinv.others";
 	
 	
