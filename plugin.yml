@@ -52,7 +52,7 @@ commands:
   clearinventory:
     description:
     usage: /<command> [playerName]
-    aliases: [ci]
+    aliases: [cinv]
     permission: donordreams.clearinventory
   clearchat:
     description: 
@@ -88,13 +88,13 @@ permissions:
   donordreams.*:
     description: Gives access to all Donor Dream Commands
     children:
-      donordreams.fly:true
-      donordreams.feed:true
-      donordreams.heal:true
-      donordreams.revive:true
-      donordreams.hat:true
-      donordreams.clearchat:true
-      donordreams.clearinventory:true
-      donordreams.workbench:true
-      donordreams.enchantingtable:true
-      donordreams.repair:true
+      donordreams.fly: true
+      donordreams.feed: true
+      donordreams.heal: true
+      donordreams.revive: true
+      donordreams.hat: true
+      donordreams.clearchat: true
+      donordreams.clearinventory: true
+      donordreams.workbench: true
+      donordreams.enchantingtable: true
+      donordreams.repair: true
